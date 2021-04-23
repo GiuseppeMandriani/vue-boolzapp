@@ -190,12 +190,6 @@ body{
 
 
 
-
-
-
-
-
-
 /* MAIN */
 
 .content {
@@ -295,3 +289,22 @@ body{
     border: none;
 }
 
+
+/* HOVER/FOCUS */
+
+.icons-list a:hover,
+.side-search button.btn:focus i{
+    color: #000;
+}
+
+.side-contacts .contacts-list li.contacts:hover{
+    background-color:rgba(0,0,0,.15);
+}
+
+.content-footer button.btn:first-child:focus{
+    color: #000;
+}
+
+.content-footer button.btn:last-child:active{
+    color: green;
+}

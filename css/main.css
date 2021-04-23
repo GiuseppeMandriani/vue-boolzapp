@@ -3,10 +3,150 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 body{
-    font-family: sans-serif;
+    height: 100vh;
+    background-image: linear-gradient(
+        to bottom, 
+        #075E54 0%,
+        #075E54 15%,
+        #ECE5DD 15%,
+        #ECE5DD 100%
+    );
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size:16px;
 }
 
+
+/* Utilities */
+
+/* Img */
+
+.user-img{
+    max-width: 40px;
+    border-radius:50%;
+    vertical-align: middle;
+}
+
+/* LAYOUT */
+
+.container {
+    display: flex;
+    width: 80%;
+    min-width: 900px;
+    height: 95%;
+    background-color: #fff;
+}
+
+
+
+/* SIDE LEFT */
+
+.side{
+    flex-basis: 35%;
+    background-color:#ccc;
+    display: flex;
+    flex-direction:column;
+}
+
+/* Side-Header */
+.side-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:60px;
+    padding: 0 10px;
+    background-color:#ededed;
+}
+
+/* Side-Header-User */
+.side-header-user span{
+    font-size:.9rem;
+    margin-left: 5px;
+}
+
+/* Side-Header-Icons */
+.side-icons a{
+    margin-right: 1rem;
+    color: #aaa;
+    transition: .4s;
+    font-size: 1.1rem;
+}
+
+.side-icons a:last-child{
+    margin-right:0;
+}
+
+.side-notifications{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color:#a2dffe;
+    padding: 0 10px;
+    font-size:.8rem;
+}
+
+.side-notifications .alert{
+    width: 50px;
+    height: 50px;
+    background-color:#fff;
+    border-radius:50%;
+    color: #a2dffe;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.1rem;
+    margin-right: .8rem;
+}
+
+.info-notifications a{
+    display: block;
+    color: #868c8f;
+    /* text-decoration: none; */
+    font-size: .8rem;
+    margin-top: 5px;
+    transition: .4s;
+}
+
+
+
+
+
+
+
+
+/* MAIN */
+
+.content {
+    flex-basis: 65%;
+    background-color:#aaa;
+    display: flex;
+    flex-direction:column;
+}
+
+/* Header Content */
+.content-header{
+    /* Per settaggio */
+    background-color:#DCF8C6;
+    padding: 20px;
+}
+
+/* Chat Content */
+
+.content-chat{
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Footer Content */
+.content-footer{
+    /* Per Settaggio */
+    background-color:#DCF8C6;
+    padding: 20px;
+    
+}
 

@@ -144,7 +144,7 @@ body{
     display: flex;
     height: 50px;
     padding: 8px;
-    background-color: #fefefe;
+    background-color: rgb(236, 236, 236);
 }
 
 .side-search button i{
@@ -166,10 +166,28 @@ body{
 
 /* Contacts */
 .side-contacts{
-    background-color:rgba(30, 143, 255, 0.644);
     overflow-y: auto;
     flex-grow: 1;
 }
+
+.side-contacts .contacts-list li.contacts{
+    list-style:none ;
+    display: flex;
+    align-items:center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+    transition: .4s;
+}
+
+.side-contacts .contacts-list li.contacts:last-child{
+    border-bottom: none;
+}
+
+.side-contacts .contacts-list li.contacts span{
+    cursor:pointer;
+    margin-left: 10px;
+}
+
 
 
 
@@ -241,7 +259,7 @@ body{
 .data-aggiornata{
     position:absolute;
     bottom: 5px;
-    right:5px;
+    right:10px;
     font-size:.6rem;
     color: #ddd;
 }

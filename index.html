@@ -64,6 +64,10 @@
             <!-- Contacts -->
             <section class="side-contacts">
                 <ul class="contacts-list">
+                    <li class="contacts" v-for="(contact,index) in contacts">
+                        <img class="user-img" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name + 'user-img'">
+                        <span class="user-information">{{ contact.name }}</span>
+                    </li>
 
 
                     <!-- Static for Layout -->

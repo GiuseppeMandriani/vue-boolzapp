@@ -208,10 +208,45 @@ body{
 /* Chat Content */
 
 .content-chat{
-    padding: 20px;
     flex-grow: 1;
     overflow-y: auto;
 }
+
+.message-chat{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+}
+
+/* Box message */
+.box-message.send,
+.box-message.received{
+    display: block;
+    min-height: 40px;
+    width: 250px;
+    max-width: 250px;
+    background-color: #fff;
+    padding: 15px 10px 25px;
+    font-size:.8rem;
+    border-radius:10px;
+    position: relative;
+    word-wrap: anywhere;
+}
+
+.box-message.send{
+    align-self: flex-end;
+    background-color: #DCF8C6;
+}
+
+.data-aggiornata{
+    position:absolute;
+    bottom: 5px;
+    right:5px;
+    font-size:.6rem;
+    color: #ddd;
+}
+
+
 
 
 /* Footer Content */

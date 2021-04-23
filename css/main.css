@@ -34,7 +34,7 @@ body{
 
 /* Buttons */
 
-.btn-search{
+.btn{
     min-width:100px;
     outline: none;
     background-color: #fff;
@@ -42,6 +42,39 @@ body{
     cursor: pointer;
 
 }
+
+/* Icons */
+
+.icons-list a{
+    margin-right: 1rem;
+    color: #aaa;
+    transition: .4s;
+    font-size: 1.1rem;
+}
+
+.icons-list a:last-child{
+    margin-right:0;
+}
+
+/* User-information */
+
+.user-information{
+    /* display: block; */
+    font-size:.9rem;
+    margin-left: 5px;
+}
+
+.user-information.access{
+    display: block;
+    margin-top: 3px;
+    margin-bottom:3px;
+}
+
+.user-information.access.date{
+    font-size:.7rem;color: #bbb;
+    
+}
+
 
 /* LAYOUT */
 
@@ -74,23 +107,7 @@ body{
     background-color:#ededed;
 }
 
-/* Side-Header-User */
-.side-header-user span{
-    font-size:.9rem;
-    margin-left: 5px;
-}
 
-/* Side-Header-Icons */
-.side-icons a{
-    margin-right: 1rem;
-    color: #aaa;
-    transition: .4s;
-    font-size: 1.1rem;
-}
-
-.side-icons a:last-child{
-    margin-right:0;
-}
 
 .side-notifications{
     display: flex;
@@ -165,17 +182,28 @@ body{
 
 .content {
     flex-basis: 65%;
-    background-color:#aaa;
+    background-image: url(../img/mine.jpg);
     display: flex;
     flex-direction:column;
 }
 
 /* Header Content */
-.content-header{
-    /* Per settaggio */
-    background-color:#DCF8C6;
-    padding: 20px;
+.header-content{
+    height: 60px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color:#ededed;
+    border-left: 1px solid #ddd;
+
 }
+/* User */
+.header-content-user{
+    display: flex;
+    align-items:center;
+}
+
 
 /* Chat Content */
 
@@ -185,11 +213,32 @@ body{
     overflow-y: auto;
 }
 
+
 /* Footer Content */
 .content-footer{
-    /* Per Settaggio */
-    background-color:#DCF8C6;
-    padding: 20px;
-    
+    height:60px;
+    padding: 0 5px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-color:#f4f0ed;
+}
+
+.content-footer button.btn{
+    height:75%;
+    font-size:1.3rem;
+    color: #aaa;
+    border: none;
+    background-color:transparent;
+}
+
+.content-footer input{
+    height: 75%;
+    padding: 0 5px;
+    color: #aaa;
+    flex-grow: 1;
+    border-radius: 10px;
+    outline: none;
+    border: none;
 }
 

@@ -32,6 +32,17 @@ body{
     vertical-align: middle;
 }
 
+/* Buttons */
+
+.btn-search{
+    min-width:100px;
+    outline: none;
+    background-color: #fff;
+    border: .2px solid #eee;
+    cursor: pointer;
+
+}
+
 /* LAYOUT */
 
 .container {
@@ -48,7 +59,7 @@ body{
 
 .side{
     flex-basis: 35%;
-    background-color:#ccc;
+    /* background-color:#ccc; */
     display: flex;
     flex-direction:column;
 }
@@ -104,11 +115,43 @@ body{
 
 .info-notifications a{
     display: block;
-    color: #868c8f;
+    color: #656a6d;
     /* text-decoration: none; */
     font-size: .8rem;
     margin-top: 5px;
     transition: .4s;
+}
+
+/* Search Conversation */
+.side-search{
+    display: flex;
+    height: 50px;
+    padding: 8px;
+    background-color: #fefefe;
+}
+
+.side-search button i{
+    color: #aaa;
+    transition: .4s;
+
+}
+
+.side-search input{
+    flex-grow: 1;
+    padding: 0 5px;
+    font-size: .7rem;
+    color: #aaa;
+    outline: none;
+    border: .2px solid #eee;
+    background-color: #fff;
+    transition: .4s;
+}
+
+/* Contacts */
+.side-contacts{
+    background-color:rgba(30, 143, 255, 0.644);
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 

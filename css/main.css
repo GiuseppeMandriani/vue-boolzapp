@@ -308,3 +308,11 @@ body{
 .content-footer button.btn:last-child:active{
     color: green;
 }
+
+.side-search input:focus{
+    border: 1px solid #aaa;
+}
+
+.content-footer input:focus{
+    border: 1px solid #ddd;
+}

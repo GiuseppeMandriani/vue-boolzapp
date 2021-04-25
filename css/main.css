@@ -157,7 +157,7 @@ body{
     flex-grow: 1;
     padding: 0 5px;
     font-size: .7rem;
-    color: #aaa;
+    color: #000;
     outline: none;
     border: .2px solid #eee;
     background-color: #fff;
@@ -177,6 +177,7 @@ body{
     padding: 15px 10px;
     border-bottom: 1px solid #eee;
     transition: .4s;
+    cursor:pointer;
 }
 
 .side-contacts .contacts-list li.contacts:last-child{
@@ -184,7 +185,6 @@ body{
 }
 
 .side-contacts .contacts-list li.contacts span{
-    cursor:pointer;
     margin-left: 10px;
 }
 
@@ -282,7 +282,7 @@ body{
 .content-footer input{
     height: 75%;
     padding: 0 5px;
-    color: #aaa;
+    color: #000;
     flex-grow: 1;
     border-radius: 10px;
     outline: none;
@@ -294,15 +294,16 @@ body{
 
 .icons-list a:hover,
 .side-search button.btn:focus i{
-    color: #000;
+    color: #656a6d;
+    
 }
 
 .side-contacts .contacts-list li.contacts:hover{
     background-color:rgba(0,0,0,.15);
 }
 
-.content-footer button.btn:first-child:focus{
-    color: #000;
+.content-footer button.btn:hover{
+    color: #656a6d;
 }
 
 .content-footer button.btn:last-child:active{
@@ -316,3 +317,4 @@ body{
 .content-footer input:focus{
     border: 1px solid #ddd;
 }
+

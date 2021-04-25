@@ -112,7 +112,7 @@ body{
 .side-notifications{
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 70px;
     background-color:#a2dffe;
     padding: 0 10px;
     font-size:.8rem;
@@ -167,6 +167,7 @@ body{
 /* Contacts */
 .side-contacts{
     overflow-y: auto;
+    height: calc(100% - 280px);
     flex-grow: 1;
 }
 
@@ -222,12 +223,13 @@ body{
 .content-chat{
     flex-grow: 1;
     overflow-y: auto;
+    height: calc(100% - 120px);
+    padding: 15px 50px;
 }
 
 .message-chat{
     display: flex;
     flex-direction: column;
-    padding: 30px 50px;
 }
 
 /* Box message */
@@ -237,6 +239,7 @@ body{
     min-height: 40px;
     width: 250px;
     max-width: 250px;
+    margin: 15px 0;
     background-color: #fff;
     padding: 15px 10px 25px;
     font-size:.8rem;
@@ -255,7 +258,8 @@ body{
     bottom: 5px;
     right:10px;
     font-size:.6rem;
-    color: #ddd;
+    color: #656a6d;
+
 }
 
 

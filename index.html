@@ -64,7 +64,9 @@
             <!-- Contacts -->
             <section class="side-contacts">
                 <ul class="contacts-list">
-                    <li class="contacts" v-for="(contact,index) in contacts">
+                    <li class="contacts"   v-for="(contact,index) in contacts"
+                        @click="setChat(index)" :class="{active: index == indexChat}"
+                    >
                         <img class="user-img" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name + 'user-img'">
                         <span class="user-information">{{ contact.name }}</span>
                     </li>
@@ -92,9 +94,9 @@
             <section class="header-content">
                 <!-- User -->
                 <div class="header-content-user">
-                    <img class="user-img" src="./img/avatar_1.jpg" alt="user-img">
+                    <img class="user-img" :src="'./img/avatar' + contacts[indexChat].avatar + '.jpg'" :alt="contacts[indexChat].name">
                     <div>
-                        <span class="user-information access">Michele</span>
+                        <span class="user-information access">{{ contacts[indexChat].name }}</span>
                         <span class="user-information access date">Ultimo accesso oggi alle 10.35</span>
                     </div>
                 </div>
@@ -116,15 +118,20 @@
             <!-- Chat Content -->
             <section class="content-chat">
                 <div class="message-chat">
-                    <span class="box-message send">Messaggio Inviato<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
-                    <span class="box-message received">Messaggio Ricevuto<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
-                    <span class="box-message send">Messaggio Inviato<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
+                    <div class="box-message send">
+                        <span>{{ contacts[indexChat].name }}<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
+                    </div>
+                    <div class ="box-message received">
 
-                    <span class="box-message received">Messaggio Ricevuto<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
-                    <span class="box-message received">Messaggio Ricevuto<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
-                    <span class="box-message received">Messaggio Ricevuto<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
-                    <span class="box-message received">Messaggio Ricevuto<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
-                    <span class="box-message received">Messaggio Ricevuto<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
+                        <span>{{ contacts[indexChat].avatar}}<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
+                    </div>
+                    
+
+
+                    <!-- Static for Layout -->
+                    <!-- <span class="box-message send">Messaggio Inviato<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
+                    <span class="box-message received">Messaggio Ricevuto<span class="data-aggiornata">23/04/2021 15:50:00</span></span> -->
+
                 </div>
 
 

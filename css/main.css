@@ -235,7 +235,6 @@ body{
 /* Box message */
 .box-message.send,
 .box-message.received{
-    display: block;
     min-height: 40px;
     width: 250px;
     max-width: 250px;
@@ -302,6 +301,7 @@ body{
     
 }
 
+.side-contacts .contacts-list li.contacts.active,
 .side-contacts .contacts-list li.contacts:hover{
     background-color:rgba(0,0,0,.15);
 }

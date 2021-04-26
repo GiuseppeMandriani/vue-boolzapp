@@ -93,7 +93,17 @@ const app = new Vue({
             },
         ],
 
+        indexChat: 0,   // Posizione indice attuale nell'array
+
     },
+
+    methods: {
+        // Functions per selezionare la chat
+        setChat(index){
+            console.log(index)
+            this.indexChat = index;
+        }
+    }
 });
     
     

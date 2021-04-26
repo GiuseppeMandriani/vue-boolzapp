@@ -118,13 +118,11 @@
             <!-- Chat Content -->
             <section class="content-chat">
                 <div class="message-chat">
-                    <div class="box-message send">
-                        <span>{{ contacts[indexChat].name }}<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
+                    <div class="message-chat" v-for="message in contacts[indexChat].messages"  >
+                        <span class="box-message send" v-if="message.status == 'sent'" >{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
+                        <span class="box-message received" v-else-if="message.status == 'received'" >{{ message.message}}<span class="data-aggiornata">{{ message.date }}</span></span>
                     </div>
-                    <div class ="box-message received">
 
-                        <span>{{ contacts[indexChat].avatar}}<span class="data-aggiornata">23/04/2021 15:50:00</span></span>
-                    </div>
                     
 
 

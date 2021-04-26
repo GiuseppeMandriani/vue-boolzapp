@@ -94,7 +94,7 @@ const app = new Vue({
         ],
 
         indexChat: 0,   // Posizione indice attuale nell'array
-
+        
     },
 
     methods: {

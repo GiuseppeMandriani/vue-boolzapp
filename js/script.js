@@ -118,8 +118,22 @@ const app = new Vue({
             console.log('click')
             
 
-            // Reset
+            // Reset Input dopo averlo inserito
             this.newText = '';
+
+            this.$refs.newText.focus(); // Per far tornare il focus all'unput dopo averlo inserito
+
+            console.log('Message');
+
+            setTimeout(() =>{
+                console.log('ok')
+                this.contacts[this.indexChat].messages.push({
+                    message: 'Ok',
+                    date: '10/01/2020 16:15:22',
+                    status:'received',
+
+                });
+            }, 2000);
 
         }
     }

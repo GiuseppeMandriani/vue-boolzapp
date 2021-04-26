@@ -273,6 +273,48 @@ body{
     align-items:center;
     justify-content: center;
     background-color:#f4f0ed;
+    position: relative;
+}
+
+.content-footer .emoji-keyboard{
+    position:absolute;
+    bottom: 120%;
+    left: 2%;
+    width: 300px;
+    height: 300px;
+    padding: 10px 10px;
+    background-color:#f4f0ed;
+    border-radius:10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    filter:drop-shadow(0 0 5px  rgba(0,0,0,.5));
+
+}
+
+.content-footer .emoji-keyboard .emoji-card{
+    flex-basis: calc(100% / 5 - 10px);
+    /* height: calc(100% / 5 - 10px); */
+    margin: 5px 5px;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    transition: background-color .3s;
+    cursor: pointer;
+}
+
+.content-footer .emoji-keyboard:before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: -7px;
+    left: 10%;
+    transform: rotate(45deg);
+    background-color:#f4f0ed;
+    z-index: 1;
 }
 
 .content-footer button.btn{
@@ -321,5 +363,10 @@ body{
 
 .content-footer input:focus{
     border: 1px solid #ddd;
+}
+
+.content-footer .emoji-keyboard .emoji-card:hover{
+    background-color:rgba(0,0,0,.10);
+
 }
 

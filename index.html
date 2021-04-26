@@ -57,14 +57,14 @@
 
             <!-- Search Conversation -->
             <section class="side-search">
-                <button class="btn"><i class="fas fa-search"></i></button>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <button class="btn" @click="addFocusSearch"><i class="fas fa-search"></i></button>
+                <input type="text" placeholder="Cerca o inizia una nuova chat" ref="search">
             </section>
 
             <!-- Contacts -->
             <section class="side-contacts">
                 <ul class="contacts-list">
-                    <li class="contacts"   v-for="(contact,index) in contacts"
+                    <li class="contacts"   v-for="(contact,index) in contacts" :key="index"
                         @click="setChat(index)" :class="{active: index == indexChat}"
                     >
                         <img class="user-img" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name + 'user-img'">
@@ -102,7 +102,7 @@
                 </div>
                 <!-- Icons -->
                 <div class="icons-list">
-                    <a href="">
+                    <a href="#" @click="addFocusSearch">
                         <i class="fas fa-search"></i>
                     </a>
                     <a href="">
@@ -118,7 +118,7 @@
             <!-- Chat Content -->
             <section class="content-chat">
                 <div class="message-chat">
-                    <div class="message-chat" v-for="message in contacts[indexChat].messages"  >
+                    <div class="message-chat" v-for="(message,index) in contacts[indexChat].messages" :key = "index"  >
                         <span class="box-message send" v-if="message.status == 'sent'" >{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
                         <span class="box-message received" v-else-if="message.status == 'received'" >{{ message.message}}<span class="data-aggiornata">{{ message.date }}</span></span>
                     </div>
@@ -139,7 +139,14 @@
 
             <!-- Footer-Content -->
             <section class="content-footer">
-                <button class="btn"><i class="far fa-smile"></i></button>
+                <div v-show="emoji" class="emoji-keyboard" @mouseleave="closeWindow">
+                    <div class="emoji-card" v-for="(symbol,index) in emojiSimbol" :key="index">
+                        <span 
+                            @click="updateEmoji(symbol,index)"
+                            >{{ symbol.symbol }}</span>
+                    </div>
+                </div>
+                <button class="btn" @mouseenter="openWindow"><i class="far fa-smile"></i></button>
                 <input type="text" placeholder="Scrivi un messaggio"
                         v-model="newText"
                         @keyup.enter="newMessage"
@@ -156,6 +163,10 @@
 
 
     <!-- JS -->
+    <!-- Day Js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+
+    <!-- Script JS -->
     <script src="./js/script.js"></script>
 </body>
 </html>

@@ -6,6 +6,116 @@ const app = new Vue({
     el: '#app',
 
     data: {
+
+        // Emoji
+        emoji: false,
+        editEmoji: {
+            index: null,
+            symbol:'',
+        },
+        emojiSimbol: [
+            {
+                name: 'smile',
+                symbol: '😄'
+            },
+            {
+                name: 'skull',
+                symbol: '💀'
+            },
+            {
+                name: 'hello',
+                symbol: '👋'
+            },
+            {
+                name: 'heart',
+                symbol: '💗'
+            },
+            {
+                name: 'kiss',
+                symbol: '😗'
+            },
+            {
+                name: 'confused',
+                symbol: '😕'
+            },
+            {
+                name: 'rolling',
+                symbol: '🤣'
+            },
+            {
+                name: 'sweat',
+                symbol: '😓'
+            },
+            {
+                name: 'halo',
+                symbol: '😇'
+            },
+            {
+                name: 'ok',
+                symbol: '👌'
+            },
+            {
+                name: 'up',
+                symbol: '👍'
+            },
+            {
+                name: 'down',
+                symbol: '👎'
+            },
+            {
+                name: 'smirking',
+                symbol: '😏'
+            },
+            {
+                name: 'bigSmile',
+                symbol: '😁'
+            },
+            {
+                name: 'sunglasses',
+                symbol: '😎'
+            },
+            {
+                name: 'horns',
+                symbol: '😈'
+            },
+            {
+                name: 'smilieCLoseEyes',
+                symbol: '😆'
+            },
+            {
+                name: 'hotDog',
+                symbol: '🌭'
+            },
+            {
+                name: 'birthday',
+                symbol: '🎂'
+            },
+            {
+                name: 'game',
+                symbol: '🎮'
+            },
+            {
+                name: 'pizza',
+                symbol: '🍕'
+            },
+            {
+                name: 'beers',
+                symbol: '🍻'
+            },
+            {
+                name: 'headphones',
+                symbol: '🎧'
+            },
+            {
+                name: 'rose',
+                symbol: '🌹'
+            },
+            {
+                name: 'italy',
+                symbol: '🇮🇹'
+            },
+        ],
+
     // Elenco contatti
         contacts: [
             {
@@ -125,6 +235,7 @@ const app = new Vue({
 
             console.log('Message');
 
+            // Risposta Automatica
             setTimeout(() =>{
                 console.log('ok')
                 this.contacts[this.indexChat].messages.push({
@@ -135,7 +246,41 @@ const app = new Vue({
                 });
             }, 2000);
 
-        }
+        },
+
+        // Function per portare focus al search
+        addFocusSearch(){
+            this.$refs.search.focus()
+        },
+
+        openWindow(){
+            console.log('click')
+
+            this.emoji = ! this.emoji;
+            //  if(this.emoji){
+            //      this.emoji = false;
+            //  } else {
+            //      this.emoji = true;
+            //  };
+
+
+        },
+
+        closeWindow(){
+            console.log('click')
+            this.emoji = false;
+        },
+
+        updateEmoji(symbol,index){
+            console.log('click');
+            console.log(index);
+            console.log(symbol.symbol);
+            this.editEmoji.symbol = this.emojiSimbol[index].symbol;
+            this.newText = this.newText + symbol.symbol;
+
+            // console.log(this.emojiSimbol.index)
+
+        },
     }
 });
     

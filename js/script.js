@@ -94,6 +94,8 @@ const app = new Vue({
         ],
 
         indexChat: 0,   // Posizione indice attuale nell'array
+
+        newText: '',
         
     },
 
@@ -102,6 +104,23 @@ const app = new Vue({
         setChat(index){
             console.log(index)
             this.indexChat = index;
+        },
+
+        // Functions per scrivere nuovo messggio
+        newMessage(){
+            if(this.newText !== ''){
+                this.contacts[this.indexChat].messages.push({
+                    message: this.newText,
+                    date: '10/01/2020 16:15:22',
+                    status: 'sent',
+                });
+            };
+            console.log('click')
+            
+
+            // Reset
+            this.newText = '';
+
         }
     }
 });

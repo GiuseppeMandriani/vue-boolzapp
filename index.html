@@ -140,7 +140,10 @@
             <!-- Footer-Content -->
             <section class="content-footer">
                 <button class="btn"><i class="far fa-smile"></i></button>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input type="text" placeholder="Scrivi un messaggio"
+                        v-model="newText"
+                        @keyup.enter="newMessage"
+                >
                 <button class="btn"><i class="fas fa-microphone"></i></button>
             </section>
         </main>

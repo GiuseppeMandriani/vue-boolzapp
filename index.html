@@ -119,8 +119,8 @@
             <section class="content-chat">
                 <div class="message-chat">
                     <div class="message-chat" v-for="(message,index) in contacts[indexChat].messages" :key = "index"  >
-                        <span class="box-message send" v-if="message.status == 'sent'" >{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
-                        <span class="box-message received" v-else-if="message.status == 'received'" >{{ message.message}}<span class="data-aggiornata">{{ message.date }}</span></span>
+                        <span class="box-message" :class="{'send' : message.status == 'sent', 'received' : message.status == 'received'}"   >{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
+                        <!-- <span class="box-message received" v-else-if="message.status == 'received'" >{{ message.message}}<span class="data-aggiornata">{{ message.date }}</span></span> -->
                     </div>
 
                     
@@ -165,6 +165,7 @@
     <!-- JS -->
     <!-- Day Js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/customParseFormat.js"></script>
 
     <!-- Script JS -->
     <script src="./js/script.js"></script>

@@ -7,6 +7,14 @@ const app = new Vue({
 
     data: {
 
+        answer:[
+            'bene grazie',
+            'si',
+            'no',
+            'va bene',
+            'tu?',
+        ],
+
         // Emoji
         emoji: false,
         editEmoji: {
@@ -206,6 +214,7 @@ const app = new Vue({
         indexChat: 0,   // Posizione indice attuale nell'array
 
         newText: '',
+
         
     },
 
@@ -216,16 +225,26 @@ const app = new Vue({
             this.indexChat = index;
         },
 
+
+
+
+
+
+
         // Functions per scrivere nuovo messggio
         newMessage(){
+
+        // Plugins
+        dayjs.extend(dayjs_plugin_customParseFormat);
+
             if(this.newText !== ''){
                 this.contacts[this.indexChat].messages.push({
                     message: this.newText,
-                    date: '10/01/2020 16:15:22',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     status: 'sent',
                 });
             };
-            console.log('click')
+            console.log('click', dayjs())
             
 
             // Reset Input dopo averlo inserito
@@ -235,12 +254,14 @@ const app = new Vue({
 
             console.log('Message');
 
+
+
             // Risposta Automatica
             setTimeout(() =>{
                 console.log('ok')
                 this.contacts[this.indexChat].messages.push({
-                    message: 'Ok',
-                    date: '10/01/2020 16:15:22',
+                    message: 'ok',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     status:'received',
 
                 });
@@ -253,6 +274,8 @@ const app = new Vue({
             this.$refs.search.focus()
         },
 
+        // Function per aprire finestra emoji
+
         openWindow(){
             console.log('click')
 
@@ -263,13 +286,16 @@ const app = new Vue({
             //      this.emoji = true;
             //  };
 
-
         },
+
+        // Function per chiudere la finestra delle emoji
 
         closeWindow(){
             console.log('click')
             this.emoji = false;
         },
+
+        // Function per prendere valore emoji
 
         updateEmoji(symbol,index){
             console.log('click');
@@ -281,6 +307,11 @@ const app = new Vue({
             // console.log(this.emojiSimbol.index)
 
         },
+
+
+
+
+
     }
 });
     

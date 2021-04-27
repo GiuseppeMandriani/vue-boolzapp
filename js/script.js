@@ -257,7 +257,7 @@ const app = new Vue({
 
                 });
             }, 2000);
-            };
+
             // console.log('click', dayjs())
             
 
@@ -267,6 +267,8 @@ const app = new Vue({
             this.$refs.newText.focus(); // Per far tornare il focus all'unput dopo averlo inserito
 
             // console.log('Message');
+
+            };
 
 
 

@@ -235,7 +235,7 @@ const app = new Vue({
         numb: 0,
       
 
-        data: dayjs().fromNow(),
+        data: dayjs().subtract(1, 'hour').fromNow(),
 
 
 
@@ -263,12 +263,16 @@ const app = new Vue({
                     status: 'sent',
                 });
 
+                setTimeout(() =>{
+                    this.data = 'sta scrivendo...'
+                },2000)
                 
             // Risposta Automatica
             setTimeout(() =>{
                 console.log('ok')
                 // this.numb = randomNumber();
                 // console.log('frase', this.answer[this.numb])
+
                 this.contacts[this.indexChat].messages.push({
                     message: this.answer[this.randomNumber()],
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -276,12 +280,14 @@ const app = new Vue({
 
                 });
 
+
+
                 this.calcolateData()
 
                 this.updateStatus()
 
             
-            }, 3000);
+            }, 4000);
 
             // console.log('click', dayjs())
             
@@ -385,7 +391,6 @@ const app = new Vue({
             setTimeout(() =>{
                 console.log('cambiare stato utente')
                 this.data = dayjs().fromNow();
-
                 },3000);
         },
             

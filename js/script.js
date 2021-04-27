@@ -231,18 +231,10 @@ const app = new Vue({
 
         searchChat:'',
 
-
         numb: 0,
       
-
         data: dayjs().subtract(1, 'hour').fromNow(),
 
-
-
-
-
-
-        
     },
 
 
@@ -265,7 +257,7 @@ const app = new Vue({
 
                 setTimeout(() =>{
                     this.data = 'sta scrivendo...'
-                },2000)
+                },1000)
                 
             // Risposta Automatica
             setTimeout(() =>{
@@ -300,9 +292,6 @@ const app = new Vue({
             // console.log('Message');
 
             };
-
-
-
 
         },
 
@@ -362,8 +351,6 @@ const app = new Vue({
                 }
             })
 
-
-
         },
 
         // Function per numeri random
@@ -395,8 +382,6 @@ const app = new Vue({
         },
             
 
-
-
         // Function per keyboard
         nextChat(){
             console.log('up')
@@ -408,10 +393,6 @@ const app = new Vue({
             console.log('down')
             this.indexChat = (this.indexChat == (this.contacts.length - 1)) ? 0 : this.indexChat + 1;
         },
-
-
-
-
 
     }
 });

@@ -58,7 +58,13 @@
             <!-- Search Conversation -->
             <section class="side-search">
                 <button class="btn" @click="addFocusSearch"><i class="fas fa-search"></i></button>
-                <input type="text" placeholder="Cerca o inizia una nuova chat" ref="search">
+                <input type="text"
+                     placeholder="Cerca o inizia una nuova chat" 
+                     ref="search"
+                     @keyup='contactChat'
+                     v-model.trim="searchChat"
+                     >
+                     
             </section>
 
             <!-- Contacts -->
@@ -119,7 +125,10 @@
             <section class="content-chat">
                 <div class="message-chat">
                     <div class="message-chat" v-for="(message,index) in contacts[indexChat].messages" :key = "index"  >
-                        <span class="box-message" :class="{send : message.status == 'sent', received : message.status == 'received'}">{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
+                        <span class="box-message" 
+                        :class= " message.status === 'sent' ? 'send' : 'received' ">{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
+                        <!-- {send : message.status == 'sent', received : message.status == 'received'} -->
+                        <!-- " message.status === 'sent' ? 'send' : 'received' "   Con operatore ternario  -->
                     </div>
 
                     

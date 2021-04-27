@@ -217,6 +217,8 @@ const app = new Vue({
 
         newText: '',
 
+        searchChat:'',
+
 
         // numb: 0,
 
@@ -314,6 +316,24 @@ const app = new Vue({
 
         },
 
+        // Function per cercare conversazione
+        contactChat(){
+            console.log(this.searchChat.toLowerCase());
+
+            this.contacts.forEach((element,index) =>{
+                // console.log(element.name)
+
+                element.name.forEach((element,index) =>{
+                    if(element.name.includes(this.searchChat))
+                    console.log(element.name)
+                })
+                
+
+            })
+
+        }
+
+
         
 
 
@@ -328,6 +348,8 @@ const app = new Vue({
         //     return this.numb;
 
         // },
+
+
 
 
 

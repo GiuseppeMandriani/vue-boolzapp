@@ -1,7 +1,14 @@
 console.log('Vue', Vue); // Verifica Vue
 
+
+// Locale
+// dayjs.extend('it')
+
+
+
 // Plugins
 dayjs.extend(dayjs_plugin_customParseFormat);
+dayjs.extend(dayjs_plugin_relativeTime);
 
 
 const app = new Vue({
@@ -225,8 +232,9 @@ const app = new Vue({
 
 
         numb: 0,
+      
 
-        data: dayjs().format('DD/MM/YYYY HH:mm:ss')
+         data: dayjs().format('DD/MM/YYYY HH:mm:ss')
 
 
 

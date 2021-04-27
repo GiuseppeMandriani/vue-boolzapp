@@ -105,6 +105,7 @@
                     <div>
                         <span class="user-information access">{{ contacts[indexChat].name }}</span>
                         <span class="user-information access date">{{ data }}</span>
+                        <!-- {{ contacts[indexChat].messages.length-1}} -->
                     </div>
                 </div>
                 <!-- Icons -->
@@ -151,7 +152,7 @@
                 <div v-show="emoji" class="emoji-keyboard" @mouseleave="closeWindow">
                     <div class="emoji-card" v-for="(symbol,index) in emojiSimbol" :key="index">
                         <span 
-                            @click="updateEmoji(symbol,index)"
+                            @click="updateEmoji(symbol,index), addFocusSearch"
                             >{{ symbol.symbol }}</span>
                     </div>
                 </div>
@@ -175,6 +176,8 @@
     <!-- Day Js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/customParseFormat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/relativeTime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/locale/it.js"></script>
 
     <!-- Script JS -->
     <script src="./js/script.js"></script>

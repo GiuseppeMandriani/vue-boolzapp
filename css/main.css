@@ -389,6 +389,8 @@ body{
     0%{
         color: #34B7F1}
     50%{
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f560"; 
+
         color: #34B7F1}
     
 

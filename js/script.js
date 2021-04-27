@@ -235,7 +235,8 @@ const app = new Vue({
         numb: 0,
       
 
-        data: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+        data: dayjs().fromNow(),
+
 
 
 
@@ -243,6 +244,7 @@ const app = new Vue({
 
         
     },
+
 
     methods: {
         // Functions per selezionare la chat
@@ -275,6 +277,10 @@ const app = new Vue({
                 });
 
                 this.calcolateData()
+
+                this.updateStatus()
+
+            
             }, 3000);
 
             // console.log('click', dayjs())
@@ -372,6 +378,19 @@ const app = new Vue({
             console.log(this.data)
             return this.data;
         },
+
+        // Funzione pèer aggiornare status utente
+
+        updateStatus(){
+            setTimeout(() =>{
+                console.log('cambiare stato utente')
+                this.data = dayjs().fromNow();
+
+                },3000);
+        },
+            
+
+
 
         // Function per keyboard
         nextChat(){

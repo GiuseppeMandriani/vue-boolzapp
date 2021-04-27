@@ -15,6 +15,10 @@ const app = new Vue({
             'no',
             'va bene',
             'tu?',
+            'ciao',
+            'ok',
+            'perchè',
+            'buona giornata',
         ],
 
         // Emoji
@@ -220,7 +224,9 @@ const app = new Vue({
         searchChat:'',
 
 
-         numb: 0,
+        numb: 0,
+
+        data: dayjs().format('DD/MM/YYYY HH:mm:ss')
 
 
 

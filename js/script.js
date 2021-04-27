@@ -9,6 +9,7 @@ console.log('Vue', Vue); // Verifica Vue
 // Plugins
 dayjs.extend(dayjs_plugin_customParseFormat);
 dayjs.extend(dayjs_plugin_relativeTime);
+dayjs.extend(dayjs_plugin_updateLocale);
 
 
 const app = new Vue({
@@ -234,7 +235,7 @@ const app = new Vue({
         numb: 0,
       
 
-         data: dayjs().format('DD/MM/YYYY HH:mm:ss')
+        data: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 
 
 
@@ -272,6 +273,8 @@ const app = new Vue({
                     status:'received',
 
                 });
+
+                this.calcolateData()
             }, 3000);
 
             // console.log('click', dayjs())
@@ -347,11 +350,9 @@ const app = new Vue({
                 }
             })
 
+
+
         },
-
-
-        
-
 
         // Function per numeri random
         randomNumber(){
@@ -364,6 +365,13 @@ const app = new Vue({
              return this.numb;
 
         },
+
+        //Function per data
+        calcolateData(){
+            this.data = dayjs().format('DD/MM/YYYY HH:mm:ss');
+            console.log(this.data)
+            return this.data;
+        }
 
 
 

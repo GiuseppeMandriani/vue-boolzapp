@@ -69,7 +69,10 @@
 
             <!-- Contacts -->
             <section class="side-contacts">
-                <ul class="contacts-list">
+                <ul class="contacts-list"
+                    @keyup.up="nextChat"
+                    @keyup.down="prevChat"
+                    tabindex="0">
                     <li class="contacts"   v-for="(contact,index) in contacts" :key="index"
                         @click="setChat(index)" :class="{active: index == indexChat}"
                         v-show="contact.visible == true"

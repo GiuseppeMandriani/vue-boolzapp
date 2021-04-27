@@ -371,7 +371,19 @@ const app = new Vue({
             this.data = dayjs().format('DD/MM/YYYY HH:mm:ss');
             console.log(this.data)
             return this.data;
-        }
+        },
+
+        // Function per keyboard
+        nextChat(){
+            console.log('up')
+            this.indexChat = (this.indexChat == 0) ? this.indexChat = (this.contacts.length - 1) : this.indexChat - 1;
+            
+            
+        },
+        prevChat(){
+            console.log('down')
+            this.indexChat = (this.indexChat == (this.contacts.length - 1)) ? 0 : this.indexChat + 1;
+        },
 
 
 

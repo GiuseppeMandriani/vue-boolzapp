@@ -330,12 +330,12 @@ const app = new Vue({
                 // console.log(element.name)
                 
                 
-                if(! element.name.toLowerCase().includes(this.searchChat.toLowerCase())){
+                if( element.name.toLowerCase().includes(this.searchChat.toLowerCase())){
                     console.log(element.name)
-                    element.visible = false
+                    element.visible = true
                 } else{
                     console.log('nessuna chat')
-                    element.visible = true
+                    element.visible = false
                 }
             })
 

@@ -324,9 +324,11 @@ const app = new Vue({
                 // console.log(element.name)
                 
                 
-                if(element.name.includes(this.searchChat.toLowerCase())){
+                if(element.name.toLowerCase().includes(this.searchChat.toLowerCase())){
                     console.log(element.name)
-                } 
+                } else{
+                    console.log('nessuna chat')
+                }
             })
 
         }

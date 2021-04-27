@@ -256,10 +256,23 @@ body{
 .data-aggiornata{
     position:absolute;
     bottom: 5px;
-    right:10px;
+    right:20px;
     font-size:.6rem;
     color: #656a6d;
 
+}
+
+.data-aggiornata::before{
+    position: absolute;
+    font-size: .5rem;
+    color: #d4e1e2;
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f00c"; 
+    border: none;
+    top: 1px;
+    right: -12px;
+    transition: .3s;
+    animation: doubleclick .3s forwards;
+    animation-delay: 2s;
 }
 
 
@@ -369,4 +382,21 @@ body{
     background-color:rgba(0,0,0,.10);
 
 }
+
+/* Animation */
+
+@keyframes doubleclick{
+    0%{
+        color: #34B7F1}
+    50%{
+        color: #34B7F1}
+    
+
+    100%{
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f560"; 
+
+        color: #34B7F1;
+    }
+
+};
 

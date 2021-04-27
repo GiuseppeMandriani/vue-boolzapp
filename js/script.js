@@ -264,7 +264,7 @@ const app = new Vue({
                     status:'received',
 
                 });
-            }, 2000);
+            }, 3000);
 
             // console.log('click', dayjs())
             

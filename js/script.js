@@ -9,13 +9,13 @@ const app = new Vue({
 
     data: {
 
-        // answer:[
-        //     'bene grazie',
-        //     'si',
-        //     'no',
-        //     'va bene',
-        //     'tu?',
-        // ],
+        answer:[
+            'bene grazie',
+            'si',
+            'no',
+            'va bene',
+            'tu?',
+        ],
 
         // Emoji
         emoji: false,
@@ -220,7 +220,7 @@ const app = new Vue({
         searchChat:'',
 
 
-        // numb: 0,
+         numb: 0,
 
 
 
@@ -253,7 +253,7 @@ const app = new Vue({
                 // this.numb = randomNumber();
                 // console.log('frase', this.answer[this.numb])
                 this.contacts[this.indexChat].messages.push({
-                    message: 'ok',
+                    message: this.answer[this.randomNumber()],
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     status:'received',
 
@@ -333,23 +333,23 @@ const app = new Vue({
                 }
             })
 
-        }
+        },
 
 
         
 
 
         // Function per numeri random
-        // randomNumber(){
-        //     console.log('numero');
+        randomNumber(){
+             console.log('numero');
  
 
-        //     this.numb = Math.floor(Math.random() * this.answer.length);
-        //     console.log(this.numb)
+             this.numb = Math.floor(Math.random() * this.answer.length);
+             console.log(this.numb)
 
-        //     return this.numb;
+             return this.numb;
 
-        // },
+        },
 
 
 

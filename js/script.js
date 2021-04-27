@@ -322,13 +322,11 @@ const app = new Vue({
 
             this.contacts.forEach((element,index) =>{
                 // console.log(element.name)
-
-                element.name.forEach((element,index) =>{
-                    if(element.name.includes(this.searchChat))
-                    console.log(element.name)
-                })
                 
-
+                
+                if(element.name.includes(this.searchChat.toLowerCase())){
+                    console.log(element.name)
+                } 
             })
 
         }

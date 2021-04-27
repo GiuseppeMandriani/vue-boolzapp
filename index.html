@@ -97,7 +97,7 @@
                     <img class="user-img" :src="'./img/avatar' + contacts[indexChat].avatar + '.jpg'" :alt="contacts[indexChat].name">
                     <div>
                         <span class="user-information access">{{ contacts[indexChat].name }}</span>
-                        <span class="user-information access date">Ultimo accesso oggi alle 10.35</span>
+                        <span class="user-information access date">{{ contacts[indexChat].messages[0].date}}</span>
                     </div>
                 </div>
                 <!-- Icons -->
@@ -105,10 +105,10 @@
                     <a href="#" @click="addFocusSearch">
                         <i class="fas fa-search"></i>
                     </a>
-                    <a href="">
+                    <a href="#">
                         <i class="fas fa-paperclip"></i>
                     </a>
-                    <a href="">
+                    <a href="#">
                         <i class="fas fa-ellipsis-v"></i>
                     </a>
                 </div>
@@ -119,8 +119,7 @@
             <section class="content-chat">
                 <div class="message-chat">
                     <div class="message-chat" v-for="(message,index) in contacts[indexChat].messages" :key = "index"  >
-                        <span class="box-message" :class="{'send' : message.status == 'sent', 'received' : message.status == 'received'}"   >{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
-                        <!-- <span class="box-message received" v-else-if="message.status == 'received'" >{{ message.message}}<span class="data-aggiornata">{{ message.date }}</span></span> -->
+                        <span class="box-message" :class="{send : message.status == 'sent', received : message.status == 'received'}">{{ message.message }}<span class="data-aggiornata">{{ message.date }}</span></span>
                     </div>
 
                     

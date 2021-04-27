@@ -1,5 +1,7 @@
 console.log('Vue', Vue); // Verifica Vue
 
+// Plugins
+dayjs.extend(dayjs_plugin_customParseFormat);
 
 
 const app = new Vue({
@@ -7,13 +9,13 @@ const app = new Vue({
 
     data: {
 
-        answer:[
-            'bene grazie',
-            'si',
-            'no',
-            'va bene',
-            'tu?',
-        ],
+        // answer:[
+        //     'bene grazie',
+        //     'si',
+        //     'no',
+        //     'va bene',
+        //     'tu?',
+        // ],
 
         // Emoji
         emoji: false,
@@ -215,6 +217,13 @@ const app = new Vue({
 
         newText: '',
 
+
+        // numb: 0,
+
+
+
+
+
         
     },
 
@@ -225,17 +234,8 @@ const app = new Vue({
             this.indexChat = index;
         },
 
-
-
-
-
-
-
         // Functions per scrivere nuovo messggio
         newMessage(){
-
-        // Plugins
-        dayjs.extend(dayjs_plugin_customParseFormat);
 
             if(this.newText !== ''){
                 this.contacts[this.indexChat].messages.push({
@@ -243,22 +243,13 @@ const app = new Vue({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     status: 'sent',
                 });
-            };
-            console.log('click', dayjs())
-            
 
-            // Reset Input dopo averlo inserito
-            this.newText = '';
-
-            this.$refs.newText.focus(); // Per far tornare il focus all'unput dopo averlo inserito
-
-            console.log('Message');
-
-
-
+                
             // Risposta Automatica
             setTimeout(() =>{
                 console.log('ok')
+                // this.numb = randomNumber();
+                // console.log('frase', this.answer[this.numb])
                 this.contacts[this.indexChat].messages.push({
                     message: 'ok',
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -266,6 +257,19 @@ const app = new Vue({
 
                 });
             }, 2000);
+            };
+            // console.log('click', dayjs())
+            
+
+            // Reset Input dopo averlo inserito
+            this.newText = '';
+
+            this.$refs.newText.focus(); // Per far tornare il focus all'unput dopo averlo inserito
+
+            // console.log('Message');
+
+
+
 
         },
 
@@ -308,7 +312,20 @@ const app = new Vue({
 
         },
 
+        
 
+
+        // Function per numeri random
+        // randomNumber(){
+        //     console.log('numero');
+ 
+
+        //     this.numb = Math.floor(Math.random() * this.answer.length);
+        //     console.log(this.numb)
+
+        //     return this.numb;
+
+        // },
 
 
 

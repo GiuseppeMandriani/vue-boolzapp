@@ -394,6 +394,7 @@ const app = new Vue({
             this.indexChat = (this.indexChat == (this.contacts.length - 1)) ? 0 : this.indexChat + 1;
         },
 
+
     }
 });
     

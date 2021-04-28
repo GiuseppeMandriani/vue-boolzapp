@@ -63,6 +63,7 @@
                      ref="search"
                      @keyup='contactChat'
                      v-model.trim="searchChat"
+                     @keyup.enter="messageFocus"
                      >
                      
             </section>
@@ -76,6 +77,9 @@
                     <li class="contacts"   v-for="(contact,index) in contacts" :key="index"
                         @click="setChat(index)" :class="{active: index == indexChat}"
                         v-show="contact.visible == true"
+                        
+                        
+                        
                     >
                         <img class="user-img" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name + 'user-img'">
                         <span class="user-information">{{ contact.name }}</span>

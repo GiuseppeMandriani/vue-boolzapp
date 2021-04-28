@@ -234,6 +234,7 @@ const app = new Vue({
         numb: 0,
       
         data: dayjs().subtract(1, 'hour').fromNow(),
+        chat:0,
 
     },
 
@@ -295,6 +296,10 @@ const app = new Vue({
 
         },
 
+        messageFocus(){
+            this.$refs.newText.focus();
+        },
+
         // Function per portare focus al search
         addFocusSearch(){
             this.$refs.search.focus()
@@ -340,15 +345,27 @@ const app = new Vue({
 
             this.contacts.forEach((element,index) =>{
                 // console.log(element.name)
+
+                
                 
                 
                 if( element.name.toLowerCase().includes(this.searchChat.toLowerCase())){
                     console.log(element.name)
-                    element.visible = true
+                    
+                    element.visible = true;
+                    console.log(index);
+
+                    this.chat = index;
+
+                    this.chat = this.openChat(index);  // Per aprire la chat
+
+
                 } else{
                     console.log('nessuna chat')
                     element.visible = false
                 }
+
+
             })
 
         },
@@ -372,7 +389,7 @@ const app = new Vue({
             return this.data;
         },
 
-        // Funzione pèer aggiornare status utente
+        // Funzione per aggiornare status utente
 
         updateStatus(){
             setTimeout(() =>{
@@ -394,6 +411,12 @@ const app = new Vue({
             this.indexChat = (this.indexChat == (this.contacts.length - 1)) ? 0 : this.indexChat + 1;
         },
 
+        //Function per aprire chat quando viene cercata
+
+        openChat(index){
+            console.log('open')
+            this.setChat(index)
+        },
 
     }
 });

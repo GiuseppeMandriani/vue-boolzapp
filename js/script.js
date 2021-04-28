@@ -337,6 +337,8 @@ const app = new Vue({
 
             // console.log(this.emojiSimbol.index)
 
+            this.messageFocus()
+
         },
 
         // Function per cercare conversazione

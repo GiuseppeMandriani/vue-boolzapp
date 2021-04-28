@@ -159,7 +159,8 @@
                 <div v-show="emoji" class="emoji-keyboard" @mouseleave="closeWindow">
                     <div class="emoji-card" v-for="(symbol,index) in emojiSimbol" :key="index">
                         <span 
-                            @click="updateEmoji(symbol,index), addFocusSearch"
+                            @click="updateEmoji(symbol,index)"
+                            
                             >{{ symbol.symbol }}</span>
                     </div>
                 </div>

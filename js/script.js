@@ -11,11 +11,46 @@ dayjs.extend(dayjs_plugin_customParseFormat);
 dayjs.extend(dayjs_plugin_relativeTime);
 dayjs.extend(dayjs_plugin_updateLocale);
 
+dayjs.updateLocale('en', {
+    relativeTime: {
+      future: "in %s",
+      past: "%s ago",
+      s: 'a few seconds',
+      m: "a minute",
+      mm: "%d minutes",
+      h: "an hour",
+      hh: "%d hours",
+      d: "a day",
+      dd: "%d days",
+      M: "a month",
+      MM: "%d months",
+      y: "a year",
+      yy: "%d years"
+    }
+  })
+
 
 const app = new Vue({
     el: '#app',
 
     data: {
+        relativeTime: {
+            future: "in %s",
+            past: "%s ago",
+            s: 'a few seconds',
+            m: "a minute",
+            mm: "%d minutes",
+            h: "an hour",
+            hh: "%d hours",
+            d: "a day",
+            dd: "%d days",
+            M: "a month",
+            MM: "%d months",
+            y: "a year",
+            yy: "%d years"
+          },
+
+        
 
         answer:[
             'bene grazie',
@@ -233,11 +268,14 @@ const app = new Vue({
 
         numb: 0,
       
-        data: dayjs().subtract(1, 'hour').fromNow(),
+        data: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         chat:0,
 
     },
 
+    // mounted(){
+    //     this.updateStatus()
+    // },
 
     methods: {
         // Functions per selezionare la chat
@@ -277,9 +315,9 @@ const app = new Vue({
 
                 this.calcolateData()
 
-                this.updateStatus()
-
-            
+                
+                 this.updateStatus()
+                
             }, 4000);
 
             // console.log('click', dayjs())
@@ -394,10 +432,10 @@ const app = new Vue({
         // Funzione per aggiornare status utente
 
         updateStatus(){
-            setTimeout(() =>{
+            setInterval(() =>{
                 console.log('cambiare stato utente')
-                this.data = dayjs().fromNow();
-                },3000);
+                this.data = 'Ultimo Accesso' + dayjs().fromNow();
+                },5000);
         },
             
 
